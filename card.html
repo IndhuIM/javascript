@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD</title>
+</head>
+<style>
+    .cardbox{
+        height: 100vh;
+        background-color:#333;
+        padding: 50px;
+        display: flex;
+        
+    }
+    .card {
+        border: 1px solid #333;
+        background-color: #9c1f1f;
+        border-radius: 5px;
+        width: 35ch;
+        height: 250px;
+    }
+    .card-body{
+   padding: 10px;
+   /* background-color: pink; */
+    }
+    .cardtitele{
+        text-align: center;
+        background-color: aqua;
+
+    }
+.fontbig{
+    font-size: 18px;
+
+}
+.blue{
+    color: #0020EE;
+}
+</style>
+<body>
+
+    <input type="text" value="" id="titletext">
+    <button onclick="addCard()">card</button>
+    <div class="cardbox">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="cardtitele">title</h3>
+                <p class="fontbig blue">hellow this is a basic para</p>
+            </div>
+        </div>
+    </div>
+
+<script>
+function addCard(){
+const titletext=document.getElementById('titletext')
+const cardbox =document.querySelector('.cardbox');
+const newcard = document.createElement('DIV');
+    newcard.className ='card'
+const newcardbody = document.createElement('DIV');
+newcardbody .className='card-body'
+const newh3 = document.createElement('H3');
+newh3.className = 'card-title'
+newh3.innerText=titletext.value
+
+const newp   = document.createElement('p'); 
+newh3.className ='card-title'
+newp.className='fontbig blue'
+newp.innerText='hellow '
+
+
+cardbox.appendChild(newcard);
+newcard.appendChild(newcardbody);
+newcardbody.appendChild(newh3);
+newcardbody.appendChild(newp);
+
+
+}
+</script>
+</body>
+</html>

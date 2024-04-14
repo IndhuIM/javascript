@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+<style>
+    body{
+    margin:0;
+    padding:0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,98,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.container{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+    display:flex;
+    width:100vw;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+#wrapper{
+    border: 3px solid white;
+    padding:1rem;
+}
+
+.container span{
+    margin-left:10px;
+}
+
+#ampm{
+    font-size:3rem;
+    align-items: end;
+}
+</style>
+<body>
+    <div class="container">
+        <div id="wrapper">
+           <span id="hours">00</span>
+           <span>:</span>
+           <span id="mins">00</span>
+           <span>:</span>
+           <span id="seconds">00</span>
+           <span id="ampm">AM</span>
+        </div>
+    </div>
+    <script>
+let ampm = document.getElementById('ampm')
+function displayTime(){
+    let dateTime = new Date();
+    let hr = dateTime.getHours();
+    let min = padZero(dateTime.getMinutes());
+    let sec = padZero(dateTime.getSeconds());
+    if(hr>12){
+        hr = hr - 12
+        ampm.innerHTML = 'PM'
+    }
+       
+    document.getElementById('hours').innerHTML = padZero(hr)
+    document.getElementById('mins').innerHTML = min
+    document.getElementById('seconds').innerHTML = sec
+}
+
+function padZero(num){
+    return num<10?"0"+num:num
+}
+
+setInterval(displayTime,500)
+    </script>
+</body>
+</html>

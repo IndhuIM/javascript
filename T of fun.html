@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPE OF FUNCTION</title>
+</head>
+<body>
+    <script>
+        //named function
+        function postivenum(num){//parameter
+            return num>0
+        }
+        console.log(postivenum(5));//arguments
+
+        function number(a,b){
+             return a+b
+        }
+        console.log(number(10,10));
+
+
+        function funname(name){
+            console.log("hi",name);
+        }
+            funname()
+            funname("indhu")
+
+// callback function ex:((v))
+       function greetconsole( name){
+        console.log("hello",name);
+       }
+       greetconsole("indhu")
+
+
+       function greetheading(name){
+        console.log("hollo2",name);
+       }
+
+       greetheading("siva")
+
+
+        function greet(callback){
+        console.log(callback);
+
+          callback ("boobalaki")
+        }
+        greet(greetconsole)
+        greet(greetheading)
+
+        //forEACH 
+
+        arr = ["indhu","siva","boobalaki"]
+
+
+        arr.forEach(print)
+        function print(value) {
+            console.log(value.toUpperCase());
+            
+        }
+      
+        arr = ["indhu","siva","boobalaki"]
+
+arr.forEach((v)=> {
+    console.log(v.toUpperCase());
+});
+console.log(arr);
+
+
+
+    </script>
+    
+</body>
+</html>

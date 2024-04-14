@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>   
+  </head>
+  <body>
+    <div id="cart"></div>
+    <div id="length"></div>
+    
+    <div id="total" style="margin-left: 900px"></div>
+    <script>
+      let cart = [
+        { id: 0, name: "iphone", price: 200, img: "./img/panel_output.PNG" },
+        { id: 0, name: "samsung", price: 100, img: "./img/admin.PNG" },
+        { id: 0, name: "realme", price: 300, img: "./img/panel_output.PNG" },
+      ];
+
+
+      let cate = [
+        ...cart.map((item) => {
+          return item;
+        }),
+      ];
+      i = 0;
+
+
+      document.getElementById("cart").innerHTML = cate
+        .map((v) => {
+          let { name, price, img } = v;
+          console.log(name);
+          return (
+            `<div id="cart_data">${name}</div>
+
+
+           <img src=${img} alt="">
+
+
+                   ` +
+            "<br/>" +
+            "<button onclick='fun(" +
+            i++ +
+            ")'>click </button>"
+          );
+        })
+        .join("");
+
+
+      let data = [];
+      function fun(a) {
+        data.push({ ...cate[a] });
+        console.log(data);
+        display();
+        console.log(a);
+      }
+      function display() {
+        document.getElementById("length").innerHTML = data.length;
+
+
+        total = 0;
+        j = 0;
+        if (data.length === 0) {
+          document.getElementById("cartdata").innerHTML = "your cart is empty";
+          document.getElementById("total").innerHTML = `tot:${0}`;
+        } else {
+          document.getElementById("cartdata").innerHTML = data
+            .map((v) => {
+              let { name, price, img } = v;
+              total = total + price;
+              console.log(total);
+              document.getElementById("total").innerHTML = `tot:${total}`;
+              console.log(name);
+
+
+              return (
+                `<div id="cart_data">${name}</div>
+                     <img src=${img} alt="">
+                     ` +
+                "<button onclick='del(" +
+                j++ +
+                ")'>del </button>"
+              );
+            })
+            .join("");
+        }
+      }
+
+
+      function del(a) {
+        console.log("hi");
+        data.splice(a, 1);
+        display();
+      }
+
+
+    </script>
+  </body>
+</html>
+
+

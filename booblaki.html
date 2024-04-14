@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <button onclick="fundata()">click</button>
+
+    <script>
+        function fundata(){
+
+            var student = [
+
+                {name:"xxx",age:20,pass:123,addrs:"cbe",id:1},
+                {name:"yyy",age:21,pass:456,addrs:"salem",id:2},
+                {name:"zzz",age:22,pass:789,addrs:"erode",id:3},
+                {name:"www",age:23,pass:100,addrs:"thirupur",id:4},
+        ]
+        
+        student.map((v)=>{
+            console.log(v);
+        });
+
+          var student2 = {
+            name: {
+                firstname:"indhu",
+                lastname:"mathi",
+            },
+            parents:{
+                mothername:"palaiyammal",
+                fathername:"shanmugam",
+            },
+            marks:[
+                {tamil:90,engalish:80,social:40},
+                {sports:100,drawings:50,music:80},
+
+            ],
+          }
+
+
+     let final= student2.marks.filter((v)=>{
+             return v===marks
+          });
+          console.log(final);
+// console.log(student2.marks);
+
+
+        }
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<style>
+    *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: #ecf0f3;
+    outline:none;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -8px -8px 15px hsla(0, 0%, 2%, 0.945),5px 5px 15px hwb(120 2% 98% / 0.867);
+
+ 
+}
+.calculator{
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,70px);
+    box-shadow: -8px -8px 15px hsla(0, 0%, 6%, 0.945),5px 5px 15px hsla(120, 20%, 1%, 0.867);
+
+}
+input{
+    grid-column: span 4;
+    height: 70px;
+    width: 260px;
+    border: none;
+    border-radius: 30px;
+    color: gray;
+    font-size: 50px;
+    text-align: end;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 20px;
+
+    
+}
+button{
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    background-color: #030303;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+
+}
+
+#equal{
+    width: 115px;
+    border-radius: 40px;
+    background-color: hwb(0 5% 95%);
+    box-shadow: -5x -5px 12px #ffffff,
+    5px 5px 12px #09090929;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="outputscreen" style="background-color: rgb(18, 20, 20);">
+            
+            <button onclick="Clear()">CL</button>
+            <button onclick="del()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display(7)">7</button>
+            <button onclick="display(8)">8</button>
+            <button onclick="display(9)">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display(0)">0</button>
+            <button onclick="calculate()" id="equal">=</button>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        let outputscreen = document.getElementById("outputscreen");
+
+        function display (num){
+            outputscreen.value +=num;
+      
+
+        }
+
+        function calculate (){
+            try{
+                outputscreen.value = eval(outputscreen.value)
+            }
+            catch(err)
+            {
+                alert("this is invalid")
+            }
+        }
+        function Clear() {
+            outputscreen.value = "";
+        };
+     function del() {
+        outputscreen.value = outputscreen.value.slice(0,-2);
+     }
+    </script>
+</body>
+</html>

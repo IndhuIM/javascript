@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewTable</title>
+</head>
+<style>
+    table,tr,td,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-top: 100px;
+        margin-left: 350px;
+        padding: 10px;
+        background-color: white;
+    }
+    table{
+        width: 600px;
+    }
+    input{
+        padding: 10px;
+        margin-left: 60px;
+        margin-top: 50px;   
+        border: 1px solid rgb(60, 43, 43);
+        box-shadow: 4px 4px 4px 4px;
+    }
+    button{
+        padding: 15px;
+        margin-top: 340px;
+        margin-left: 580px;
+        font-weight: bolder;
+        border: 1px solid black;
+        font-family: 'Courier New', Courier, monospace;
+       letter-spacing: 1.0rem;
+       font-size: larger;
+    }
+
+    button:hover{
+        cursor: pointer;
+        color: white;
+        background-color: blue;
+    }
+</style>
+<body style="background-color: #333; width: 90%;">
+    <input type="text" id="name">
+    <input type="text" id="age">
+    <input type="text" id="pass">
+    <input type="text" id="id">
+    <input type="text" id="report">
+
+
+    <table  id="result">
+        <tr>
+        <th>NAME</th>
+        <th>AEG</th>
+        <th>PASSWORD</th>
+        <th>ID</th>
+        <th>REPORT</th>
+    </tr></table>
+
+<!-- <button>reset</button> -->
+    <button onclick="fundata()">click</button>
+    
+
+    <script>
+        function fundata(){
+
+
+            let vname = document.getElementById("name").value;
+            let vage =document.getElementById("age").value;
+            let vpass = document.getElementById('pass').value;
+            let vid = document.getElementById('id').value;
+            let vreport = document.getElementById('report').value;
+
+ if(vname=="")
+ 
+ {
+alert('please fill the input')
+ }
+
+else{
+        let one = document.createElement('tr');
+
+        let two = document.createElement('td');
+        let three = document.createElement('td');
+        let four = document.createElement('td');
+        let add = document.createElement('td');
+        let add2 = document.createElement('td');
+
+        let addreport=document.createElement('th');
+        let addid =document.createElement('th');
+        let six = document.createElement('th');
+        let seven = document.createElement('th');
+        let eight = document.createElement('th');
+
+
+        two.append(vname);
+        three.append(vage);
+        four.append(vpass);
+        add.append(vid);
+        add2.append(vreport);
+
+        one.append(two,three,four,add,add2);
+
+        let vresult = document.getElementById('result');
+
+        vresult.append(one);
+
+           };
+
+   document.getElementById('name').value="";
+   document.getElementById('age').value="";
+   document.getElementById('pass').value="";
+   document.getElementById('id').value="";
+   document.getElementById('report').value="";
+
+        }; 
+    </script>
+
+</body>
+</html>

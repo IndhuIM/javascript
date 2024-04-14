@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <script>
+
+
+
+    var School = [
+
+    {name:"indhu",id:"indhumz",UD:1},
+    {name:"uma",id:"umamz",UD:2},
+    {name:"goki",id:"gokilx",UD:3},
+    {name:"nithi",id:"nithiumz",UD:4},
+];
+
+console.log(School);
+
+School.map((v)=>{
+  console.log(v.name);
+})
+
+
+let data_arr = School.filter((v)=>{
+    return v.UD!==3
+});
+
+console.log(data_arr);
+
+
+
+
+
+    </script>
+
+   
+</body>
+</html>

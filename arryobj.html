@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+    <button onclick="data()">click</button>
+   
+    <script>
+        function data(){
+
+            var student = [
+            {Name:"xxx", age:21,login:"1x",sub:"js",id:1},
+            {Name:"yyy", age:22,login:"2x",sub:"js",id:2},
+            {Name:"zzz", age:24,login:"3x",sub:"js",id:3},
+            {Name:"www", age:23,login:"4",sub:"js",id:4},
+            {Name:"qqq", age:24,login:"5",sub:"js",id:5},
+            {Name:"eee", age:25,login:"6",sub:"js",id:6}
+
+            
+    ]
+
+    let b = student.map(v=>   v.Name)
+    console.log(b);
+
+
+console.log(student);
+
+
+
+let obj_data ={
+
+    fistname:"indhu",
+    lastname:"mathi",
+    parents:{
+        mothername:"xxx",
+        fathername:"yyy",
+    },
+    marks:[{name:"rrr",age:40,location:"salem" ,ud:1},{name:"yyy",age:50,location:"cbe"},
+    {name:"uuu",age:50,location:"cbe"}],
+    
+}
+
+console.log(obj_data);
+console.log(obj_data.parents.fathername);
+obj_data.marks.map((v)=>{
+    console.log(v.name);
+})
+
+
+
+
+console.log(obj_data.marks[0]);
+
+obj_data.marks.map((v)=>{
+   
+    console.log(v.name);
+});
+
+   var final=obj_data.marks.filter((v)=>{
+     return v.ud===1
+
+});
+
+
+
+console.log(final);
+    console.log(obj_data.marks[0]);
+
+ }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
